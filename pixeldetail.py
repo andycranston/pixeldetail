@@ -1,8 +1,8 @@
 #! /usr/bin/python3
 #
-# @(!--#) @(#) pixeldetail.py, version 006, 21-may-2020
+# @(!--#) @(#) pixeldetail.py, version 007, 21-may-2020
 #
-# create a detailed version of a BMP/PNG file
+# create a detailed version of a BMP/PNG/JPG file
 #
 # uses the Pillow library
 #
@@ -231,6 +231,11 @@ def main():
         for t in range(0, im.size[1]):
             pixel = im.getpixel((w, t))
             
+            if ((pixel[0] + pixel[1] + pixel[2]) // 3) < 128:
+                textcolour = (255, 255, 255)
+            else:
+                textcolour = (0, 0, 0)
+            
             if (pixel != (0,0,0)) and (pixel != (255,255,255)):
                 pcount = 0
                 
@@ -239,11 +244,6 @@ def main():
                     pixel = [pixel[0]]
                 
                 for p in pixel:
-                    if p < 128:
-                        textcolour = (255, 255, 255)
-                    else:
-                        textcolour = (0, 0, 0)
-                
                     pstring = '{:03d}'.format(p)
     
                     wpos = (w * (magnify_wide + 1)) + PADDING_WIDE
