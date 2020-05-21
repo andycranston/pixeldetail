@@ -34,7 +34,8 @@ The program will have created the file `pd-detail.bmp` and it should look like:
 
 [pd-detail.bmp](https://raw.githubusercontent.com/andycranston/pixeldetail/master/pd-detail.bmp)
 
-Open the above link in a new tab or Window so you can keep reading here.
+If possible try and open the above link in a new tab or window so you
+can keep reading here.
 
 For each pixel in the original image a larger "pixel box" is created which
 measures (by default) 48 pixels wide by 48 pixels tall. In the top left of
@@ -58,7 +59,7 @@ This happens when the pixel colour is a greyscale colour - that is each
 of the three numbers in the RGB value are the same.
 
 Finally a pixel which has the RGB value (0,0,0) is just an empty black
-pixel box and, similarly, a pixel which has the RGB value (255,255,255)
+pixel box and a pixel which has the RGB value (255,255,255)
 is an empty white pixel box.
 
 Note that the new file name is based on the original file name - the
@@ -75,7 +76,7 @@ filename-detail.bmp
 ```
 
 Be warned that if a file called `filename-detail.bmp` already exists it
-will be overritten without warning.
+will be overwritten without warning.
 
 ## Command line option `--wide`
 
@@ -90,7 +91,7 @@ will create pixel boxes that are 64 pixels wide.
 
 You cannot specify a width less than 23 pixels.
 
-## Command line option `--wide`
+## Command line option `--tall`
 
 The height of the pixel boxes can be changed from the default 48 pixels
 to any reasonable value. For example:
